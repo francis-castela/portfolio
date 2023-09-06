@@ -46,18 +46,19 @@
         <table class="custom-table">
             <thead>
                 <tr>
-                    <th style="width: 12ch;">Data</th>
-                    <th>Título</th>
-                    <th style="width: 12ch;">Gênero</th>
-                    <th style="width: 9ch;">Duração</th>
-                    <th style="width: 13ch;">Personagens</th>
-                    <th style="width: 15ch;">Classificação<br>indicativa</th>
+                    <th style="width: 12ch;"><button id="btnData">Data</button></th>
+                    <th><button id="btnTitulo">Título</button></th>
+                    <th style="width: 12ch;"><button id="btnGenero">Gênero</button></th>
+                    <th style="width: 9ch;"><button id="btnDuracao">Duração</button></th>
+                    <th style="width: 13ch;"><button id="btnPersonagens">Personagens</button></th>
+                    <th style="width: 15ch;"><button id="btnClassificacao">Classificação<br>indicativa</button></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>05/04/2023</td>
-                    <td style="text-align: left;"><a href="/portfolio/teatro/paraiso_perdido.html" class="link">Paraíso Perdido</a></td>
+                    <td style="text-align: left;"><a href="/portfolio/teatro/paraiso_perdido.html" class="link">Paraíso
+                            Perdido</a></td>
                     <td>Comédia</td>
                     <td>20min</td>
                     <td>14</td>
@@ -67,6 +68,25 @@
         </table>
     </div>
 
+    <script>
+        function sortTable(columnIndex) {
+            const table = document.querySelector('.custom-table');
+            const rows = Array.from(table.querySelectorAll('tbody tr'));
+
+            rows.sort((a, b) => {
+                const cellA = a.querySelectorAll('td')[columnIndex].textContent;
+                const cellB = b.querySelectorAll('td')[columnIndex].textContent;
+                return cellA.localeCompare(cellB);
+            });
+            rows.forEach(row => table.querySelector('tbody').appendChild(row));
+        }
+        document.getElementById('btnData').addEventListener('click', () => sortTable(0));
+        document.getElementById('btnTitulo').addEventListener('click', () => sortTable(1));
+        document.getElementById('btnGenero').addEventListener('click', () => sortTable(2));
+        document.getElementById('btnDuracao').addEventListener('click', () => sortTable(3));
+        document.getElementById('btnPersonagens').addEventListener('click', () => sortTable(4));
+        document.getElementById('btnClassificacao').addEventListener('click', () => sortTable(5));
+    </script>
 
 </body>
 
