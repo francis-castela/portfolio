@@ -101,12 +101,17 @@ hr {
 .custom-table th {
     color: #2F2710;
     background-color: #F0C713;
-    font-weight: bold;
-    text-align: center;
+    font-weight: bolder;
 }
 
 .custom-table td {
-    text-align: left;
     color: #ffffff;
     background-color: #2F2710;
+}
+
+.custom-table th, 
+.custom-table td {
+    padding: 0ch 1ch;
+    text-align: center;
+    border: 1px solid #F0C713;
 }
