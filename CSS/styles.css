@@ -15,11 +15,7 @@ body {
     margin-right: 20px;
 }
 
-h1 {
-    color: #5AFF15;
-}
-
-h2 {
+h1, h2 {
     color: #F0C713;
 }
 
