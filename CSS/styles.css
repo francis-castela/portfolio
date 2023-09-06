@@ -89,13 +89,13 @@ hr {
 .table-container {
     text-align: center;
     overflow-x: auto;
-    margin: 0 auto; 
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 .custom-table {
     width: 100%;
-    border: 1px solid #F0C713;
-    max-width: 100%;
+    border-collapse: collapse;
 }
 
 .custom-table th {
@@ -114,4 +114,10 @@ hr {
     padding: 0ch 1ch;
     text-align: center;
     border: 1px solid #F0C713;
+}
+
+@media screen and (max-width: 768px) {
+    .table-container {
+        overflow-x: scroll;
+    }
 }
