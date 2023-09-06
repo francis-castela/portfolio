@@ -83,3 +83,7 @@ hr {
     background-color: #F0C713;
     color: #2F2710;
 }
+
+.table-container {
+    overflow-x: auto;
+}
