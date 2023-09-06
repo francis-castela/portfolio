@@ -81,5 +81,28 @@ hr {
 }
 
 .table-container {
+    text-align: center;
+    border: 1px solid #F0C713;
     overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+    border: 1px solid #F0C713;
+    padding: 8px;
+}
+
+.custom-table th {
+    color: #F0C713;
+    font-weight: bold;
+    text-align: center;
+}
+
+.custom-table td {
+    text-align: left;
 }
