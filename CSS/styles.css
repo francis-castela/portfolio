@@ -20,7 +20,13 @@ h1, h2 {
 }
 
 .link {
-    color: #33C9FF
+    color: #33C9FF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.link:hover {
+    color: #F0C713;
 }
 
 header {
