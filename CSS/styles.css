@@ -98,12 +98,8 @@ hr {
     border-collapse: collapse;
 }
 
-.custom-table th, .custom-table td {
-    padding: 1ch;
-    text-align: center;
-}
-
 .custom-table th {
+    text-align: center;
     color: #2F2710;
     background-color: #F0C713;
     font-weight: bolder;
@@ -111,6 +107,31 @@ hr {
 }
 
 .custom-table td {
+    text-align: center;
+    padding: 1ch;
     color: #ffffff;
     border: 1px solid #F0C713;
+}
+
+.custom-table th button {
+    background-color: #F0C713;
+    padding: 1ch;
+    color: #2F2710;
+    border: 1px solid #F0C713;
+    padding: 8px 12px; 
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bolder;
+}
+
+.custom-table th button:hover {
+    background-color: #2F2710;
+    color: #F0C713;
+}
+
+.custom-table th button:active {
+    background-color: #F0C713;
+    color: #2F2710;
 }
