@@ -1,0 +1,85 @@
+/* ESTILOS DE TODAS AS PÁGINAS */
+
+@font-face {
+    font-family: "Liberation Mono";
+    src: url("/portfolio/CSS/LiberationMono-Regular.ttf");
+}
+
+body {
+    font-family: "Liberation Mono";
+    color: #ffffff;
+    background-color: #2F2710;
+    background-image: linear-gradient(to bottom, #0000001a 3px, transparent 1px);
+    background-size: 100% 6px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+h1 {
+    color: #5AFF15;
+}
+
+h2 {
+    color: #F0C713;
+}
+
+.link {
+    color: #33C9FF
+}
+
+header {
+    background-image: url("/portfolio/CSS/banner_principal.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 240px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 200%;
+}
+
+.icons {
+    text-align: center;
+    margin: 0px;
+    padding: 0;
+}
+
+.icons span {
+    display: inline-block;
+    margin: 25px 50px;
+    font-size: 600%;
+}
+
+hr {
+    border: 1px solid #F0C713;
+}
+
+.button-link {
+    display: inline-block;
+    margin: 10px;
+    background-color: #443710;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #F0C713;
+    color: #2F2710;
+}
