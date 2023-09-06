@@ -1,5 +1,24 @@
 /* ESTILOS DE TODAS AS PÁGINAS */
 
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.blinking-bar {
+    animation: blink 1s infinite;
+    color: #2ECA17;
+    font-size: 100%;
+}
+
 @font-face {
     font-family: "Liberation Mono";
     src: url("/portfolio/CSS/LiberationMono-Regular.ttf");
@@ -8,48 +27,47 @@
 body {
     font-family: "Liberation Mono";
     color: #ffffff;
-    background-color: #2F2710;
-    background-image: linear-gradient(to bottom, #0000001a 3px, transparent 1px);
+    background-color: #221b08;
+    background-image: linear-gradient(to bottom, #0f0c04 3px, transparent 1px);
     background-size: 100% 6px;
     margin-left: 20px;
     margin-right: 20px;
 }
 
 h1, h2 {
-    color: #F0C713;
+    color: #DAB203;
 }
 
 .link {
-    color: #33C9FF;
+    color: #00A1D2;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .link:hover {
-    color: #F0C713;
+    color: #DAB203;
 }
 
 header {
-    background-image: url("/portfolio/CSS/banner_principal.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-    width: 100%;
-    height: 240px;
     text-align: center;
+    font-size: 150%;
     color: #ffffff;
     position: relative;
     margin: 0;
     padding: 0;
 }
 
-.banner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 200%;
+.monitor {
+    background-color: #121b10;
+    border: 6px solid #32312D;
+    background-image: linear-gradient(to bottom, #090c08 3px, transparent 1px);
+    background-size: 100% 6px;
+    border-radius: 100px;
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .icons {
@@ -65,7 +83,7 @@ header {
 }
 
 hr {
-    border: 1px solid #F0C713;
+    border: 1px solid #DAB203;
 }
 
 .button-link {
@@ -82,8 +100,8 @@ hr {
 }
 
 .button-link:hover {
-    background-color: #F0C713;
-    color: #2F2710;
+    background-color: #DAB203;
+    color: #363301;
 }
 
 .table-container {
@@ -100,24 +118,24 @@ hr {
 
 .custom-table th {
     text-align: center;
-    color: #2F2710;
-    background-color: #F0C713;
+    color: #363301;
+    background-color: #DAB203;
     font-weight: bolder;
-    border: 1px solid #2F2710;
+    border: 1px solid #363301;
 }
 
 .custom-table td {
     text-align: center;
     padding: 1ch;
     color: #ffffff;
-    border: 1px solid #F0C713;
+    border: 1px solid #DAB203;
 }
 
 .custom-table th button {
-    background-color: #F0C713;
+    background-color: #DAB203;
     padding: 1ch;
-    color: #2F2710;
-    border: 1px solid #F0C713;
+    color: #363301;
+    border: 1px solid #DAB203;
     padding: 8px 12px; 
     cursor: pointer;
     outline: none;
@@ -127,11 +145,11 @@ hr {
 }
 
 .custom-table th button:hover {
-    background-color: #2F2710;
-    color: #F0C713;
+    background-color: #363301;
+    color: #DAB203;
 }
 
 .custom-table th button:active {
-    background-color: #F0C713;
-    color: #2F2710;
+    background-color: #DAB203;
+    color: #363301;
 }
