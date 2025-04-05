@@ -1,276 +1,239 @@
+/* Por Francis Castela, para o A.E.C.A */
+/* Inspirado no design da MediaWiki */
+
+/* ===================== DEFINIÇÃO DE FONTES ===================== */
+@font-face {
+    font-family: "Bebas";
+    src: url("/fonts/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Nunito";
+    src: url("/fonts/Nunito.ttf");
+}
+
+@font-face {
+    font-family: "Source";
+    src: url("/fonts/SourceCodePro.ttf");
+}
+
+/* ===================== RESET E CONFIGURAÇÕES GLOBAIS ===================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,
-body {
-    line-height: 1.5;
-    font-family: "Nunito";
-    font-weight: normal;
-    background: #EEE;
-    font-size: medium;
-    text-align: justify;
-    overflow-x: hidden;
-}
-
-body>section {
-    padding: 30px 10px;
-}
-
 :root {
-    --fundo-escuro: #BBB;
-    --texto-titulo: #b90000;
+    --fundo-pagina: #EEE;
+    --fundo-main: #FFF;
+    --header: #8C171B;
+    --texto-header: #FFF;
     --texto-comum: #000000;
-    --texto-subtitulo: #444;
-    --hover-fundo: #444;
-    --borda: 1px solid #444;
-    --menu-background: #000000;
-    --botao-piscante-1: #b90000;
-    --botao-piscante-2: #800000;
+    --texto-subtitulo: #333;
+    --botao-piscante: #E25054;
 }
 
-/* BASE */
+body {
+    font-family: "Nunito";
+    line-height: 1.5;
+    font-weight: normal;
+    font-size: 1rem;
+    overflow-x: hidden;
+    color: var(--texto-comum);
+    background: var(--fundo-pagina);
+    text-align: justify;
+}
 
+/* ===================== ELEMENTOS BÁSICOS ===================== */
 p {
-    text-indent: 30px;
-    color: var(--texto-comum);
-    margin-bottom: 10px;
-    font-size: small;
+    margin-bottom: 1rem;
 }
 
-ul, li {
-    color: var(--texto-comum);
-    margin-bottom: 10px;
+a {
+    color: var(--header);
+}
+
+hr {
+    border-bottom: 0;
+    margin-bottom: 1rem;
+}
+
+h1,
+h2 {
+    font-family: "Bebas";
+    color: var(--header);
+    font-weight: normal;
+    line-height: 1;
 }
 
 h1 {
-
-    font-weight: normal;
-    font-size: 40px;
-    text-align: center;
+    font-size: 3rem;
 }
 
 h2 {
-    font-weight: bold;
-    font-size: large;
-    color: var(--texto-subtitulo);
-    margin: 0 0 20px 0;
-    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
 }
 
 h3 {
     font-weight: bold;
-    font-size: larger;
-    color: var(--texto-titulo);
-    text-indent: 30px;
-    margin: 20px 0 10px;
+    color: var(--texto-subtitulo);
 }
 
-a {
-    color: var(--texto-titulo);
+h4,
+h4 a {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--header);
 }
 
-article {
-    border-bottom: var(--borda);
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+h1,
+h2,
+h3,
+h4 {
+    text-align: left;
 }
 
-img,
-video {
-    border-radius: 10px;
-}
 
-@keyframes backgroundBlink {
-    0%, 100% { background: var(--botao-piscante-1); }
-    50% { background: var(--botao-piscante-2); }
-}
-
-.google-docs-link {
-    justify-content: center;
+/* ===================== CABEÇALHO ===================== */
+.header {
+    background: var(--header);
+    padding: 0.5rem 1rem;
     display: flex;
-    padding: 10px 20px;
-    background-color: var(--fundo-escuro);
-    color: #EEE;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-img-left,
+.header-img-right {
+    height: 3.8rem;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.logo-main {
+    margin-top: 0.6rem;
+    font-family: "Bebas";
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--texto-header);
+}
+
+.logo-sub {
+    font-family: "Bebas";
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: var(--texto-header);
+    margin-top: 0.3rem;
+}
+
+.logo-main a,
+.logo-sub a {
+    color: var(--texto-header);
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    animation: backgroundBlink 2s infinite; 
 }
 
-.google-docs-link:hover {
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.03);
-}
-
-.google-docs-icon {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-    background-image: url('https://www.gstatic.com/images/branding/product/2x/docs_48dp.png');
-    background-size: cover;
-}
-
-#pageContent {
-    max-width: 1000px;
-    margin: auto;
-    border: none;
-}
-
-#title {
+/* ===================== NAVEGAÇÃO ===================== */
+.nav {
+    background-color: #ffffff;
+    padding: 1.3rem 1rem;
+    margin-bottom: 1rem;
     text-align: center;
-    text-indent: 0px;
-    font-size: 30px;
-    margin-top: 20px;
 }
 
-#h1-2 {
-    color: var(--texto-titulo);
-    text-align: left;
-    font-size: large;
-    font-weight: bold;
-    text-indent: 0;
-    margin-top: 15px;
-}
-
-#h2-2 {
-    text-align: left;
-    text-indent: 0;
-    font-weight: normal;
-    font-size: small;
-    margin: 0;
-    color: var(--texto-comum);
-}
-
-table {
-    color: var(--texto-comum);
-    border-collapse: collapse;
+.nav-links {
+    list-style: none;
+    display: inline-flex;
+    gap: 1rem;
+    justify-content: center;
     margin: 0 auto;
-    width: 95%;
+    padding: 0;
 }
 
-th, td {
-    padding: 8px;
-    vertical-align: top;
-    width: 40%;
-    border-radius: 5px;
-}
-
-th {
-    text-align: right;
-    color: var(--texto-titulo);
-}
-
-.cabecalho-tabela {
-    padding-bottom: 0;
-    text-align: center;
-    background: var(--texto-titulo);
-    color: #EEE;
-    font-weight: normal;
-    font-size: 40px;
-    text-align: center;
-    line-height: 0.9;
-}
-
-td {
-    text-align: left;
-}
-
-main {
-    float: right;
-    width: 70%;
-}
-
-/* LATERAL */
-
-aside {
-    float: left;
-    width: 25%;
+.nav-links a {
+    color: #000000;
     text-decoration: none;
-}
-
-aside>div {
-    padding: 4px;
-    margin: 10px;
-    background: var(--fundo-escuro);
-    color: var(--texto-comum);
-    text-align: center;
-    border-radius: 10px;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
     font-weight: bold;
-    text-decoration: none;
+    background-color: #DDD;
 }
 
-aside>div a {
-    color: var(--texto-comum);
-    font-size: small;
+.nav-links a:hover {
+    background-color: var(--header);
+    color: #ffffff;
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
-aside img,
-article img {
-    max-width: 100%;
-    min-width: 100%;
+/* ===================== LAYOUT PRINCIPAL ===================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-content {
+    flex: 1;
+    background-color: var(--fundo-main);
+    padding: 1rem;
+}
+
+
+a:hover:not(:has(img:hover)) {
+    background-color: var(--header);
+    color: #ffffff;
+    transition: all 0.3s ease;
+
+}
+
+img {
+    width: 100%;
     height: auto;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-aside>div:hover {
     cursor: pointer;
     transition: transform 0.3s ease;
+}
+
+img:hover {
     transform: scale(1.1);
 }
 
-/* ZOOM EM IMAGEM */
-
-#zoomImage1,
-#zoomImage2,
-#zoomImage3,
-#zoomImage4,
-#zoomImage5,
-#zoomImage6,
-#zoomImage7,
-#zoomImage8,
-#zoomImage9,
-#zoomImage10 {
-    cursor: pointer;
-    transition: transform 0.5s;
+.sidebar-galeria {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.4rem;
+    margin-bottom: 1rem;
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+.sidebar-galeria img {
     width: 100%;
     height: 100%;
-    background: #000000cb;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    object-fit: cover;
 }
 
-.overlay img {
-    max-width: 90%;
-    max-height: 90%;
-}
 
-/* RODAPÉ */
-
+/* ===================== RODAPÉ ===================== */
 footer {
     padding: 10px;
-    margin: 10px;
-    font-size: 10px;
-    color: var(--texto-comum);
-    text-decoration: none;
-    background: var(--fundo-escuro);
-    max-width: 1000px;
-    margin: auto;
-    clear: both;
+    font-size: 0.8rem;
+    color: #fff;
+    background: var(--header);
     text-align: center;
+    margin-top: auto;
+    width: 100%;
 }
 
 footer a {
@@ -278,17 +241,178 @@ footer a {
     color: var(--texto-comum);
 }
 
-/* AJUSTES RESPONSIVOS */
+/* ===================== COMPONENTES ESPECÍFICOS ===================== */
+/* Modal de Imagem */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
 
-@media screen and (max-width: 600px) {
-    main {
-        float: none;
-        width: 100%;
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #bbb;
+}
+
+/* Botão piscante */
+@keyframes backgroundBlink {
+    0%,
+    100% {
+        background: var(--header);
+    }
+    50% {
+        background: var(--botao-piscante);
+    }
+}
+
+.botao-piscante {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    padding: 0.5rem;
+    color: #EEE;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: "Nunito";
+    font-weight: bold;
+    animation: backgroundBlink 3s infinite;
+}
+
+.botao-piscante:hover {
+    cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.03);
+}
+
+/* Classificação Indicativa */
+.classificacao-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: left;
+}
+
+.classificacao-box img {
+    width: 100px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* Tabelas */
+table {
+    border-collapse: collapse;
+    width: auto;
+    margin-bottom: 2rem;
+}
+
+thead th {
+    text-align: left;
+    font-family: "Bebas";
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 0.4rem;
+    border: 1px solid #BBB;
+    line-height: 1.2;
+}
+
+th {
+    color: var(--header);
+}
+
+/* ===================== RESPONSIVIDADE ===================== */
+
+@media (max-width: 768px) {
+
+    .sidebar-galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .sidebar-galeria img:first-child:nth-last-child(odd) {
+        grid-column: 1 / -1; 
+        max-width: 100%;
+        object-position: center;
     }
 
-    aside {
-        float: none;
-        width: 100%;
+    .header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.5rem;
     }
 
+    .header-img-left,
+    .header-img-right {
+        display: none;
+    }
+
+    .logo-container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        order: 1;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+    }
+
+    .footer img {
+        height: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .sidebar-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar-galeria img:first-child:nth-last-child(odd) {
+        grid-column: 1 / -1; 
+        max-width: 100%;
+        object-position: center;
+    }
+
+    .classificacao-box {
+        text-align: left;
+    }
+
+    .classificacao-box img {
+        width: 60px;
+    }
 }
