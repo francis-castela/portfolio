@@ -95,88 +95,6 @@ h4 {
     text-align: left;
 }
 
-
-/* ===================== CABEÇALHO ===================== */
-.header {
-    background: var(--header);
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    position: relative;
-}
-
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.header-img-left,
-.header-img-right {
-    height: 3.8rem;
-    width: auto;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-.logo-main {
-    margin-top: 0.6rem;
-    font-family: "Bebas";
-    font-size: 1.8rem;
-    line-height: 1;
-    color: var(--texto-header);
-}
-
-.logo-sub {
-    font-family: "Bebas";
-    font-size: 1.5rem;
-    line-height: 1.2;
-    color: var(--texto-header);
-    margin-top: 0.3rem;
-}
-
-.logo-main a,
-.logo-sub a {
-    color: var(--texto-header);
-    text-decoration: none;
-}
-
-/* ===================== NAVEGAÇÃO ===================== */
-.nav {
-    background-color: #ffffff;
-    padding: 1.3rem 1rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.nav-links {
-    list-style: none;
-    display: inline-flex;
-    gap: 1rem;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.nav-links a {
-    color: #000000;
-    text-decoration: none;
-    padding: 0.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    font-weight: bold;
-    background-color: #DDD;
-}
-
-.nav-links a:hover {
-    background-color: var(--header);
-    color: #ffffff;
-    transform: scale(1.1);
-    cursor: pointer;
-}
-
 /* ===================== LAYOUT PRINCIPAL ===================== */
 .container {
     max-width: 1200px;
@@ -278,76 +196,6 @@ footer a {
     color: #bbb;
 }
 
-/* Botão piscante */
-@keyframes backgroundBlink {
-    0%,
-    100% {
-        background: var(--header);
-    }
-    50% {
-        background: var(--botao-piscante);
-    }
-}
-
-.botao-piscante {
-    justify-content: center;
-    text-align: center;
-    display: flex;
-    padding: 0.5rem;
-    color: #EEE;
-    text-decoration: none;
-    border-radius: 5px;
-    font-family: "Nunito";
-    font-weight: bold;
-    animation: backgroundBlink 3s infinite;
-}
-
-.botao-piscante:hover {
-    cursor: pointer;
-    transition: 0.3s;
-    transform: scale(1.03);
-}
-
-/* Classificação Indicativa */
-.classificacao-box {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    justify-content: left;
-}
-
-.classificacao-box img {
-    width: 100px;
-    height: auto;
-    flex-shrink: 0;
-}
-
-/* Tabelas */
-table {
-    border-collapse: collapse;
-    width: auto;
-    margin-bottom: 2rem;
-}
-
-thead th {
-    text-align: left;
-    font-family: "Bebas";
-    font-size: 1.4rem;
-    font-weight: normal;
-}
-
-th,
-td {
-    text-align: left;
-    padding: 0.4rem;
-    border: 1px solid #BBB;
-    line-height: 1.2;
-}
-
-th {
-    color: var(--header);
-}
-
 /* ===================== RESPONSIVIDADE ===================== */
 
 @media (max-width: 768px) {
@@ -362,38 +210,11 @@ th {
         object-position: center;
     }
 
-    .header {
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        padding: 0.5rem;
-    }
-
-    .header-img-left,
-    .header-img-right {
-        display: none;
-    }
-
-    .logo-container {
-        width: 100%;
-        text-align: center;
-    }
 
     .container {
         flex-direction: column;
     }
 
-    .sidebar {
-        width: 100%;
-        order: 1;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-    }
-
-    .footer img {
-        height: 18px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -406,13 +227,5 @@ th {
         grid-column: 1 / -1; 
         max-width: 100%;
         object-position: center;
-    }
-
-    .classificacao-box {
-        text-align: left;
-    }
-
-    .classificacao-box img {
-        width: 60px;
     }
 }

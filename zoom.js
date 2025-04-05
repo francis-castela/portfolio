@@ -1,4 +1,4 @@
-document.querySelectorAll('.sidebar img').forEach(img => {
+document.querySelectorAll('img').forEach(img => {
     img.addEventListener('click', () => {
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
